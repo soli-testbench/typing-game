@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS game_results (
+  id SERIAL PRIMARY KEY,
+  wpm NUMERIC NOT NULL,
+  accuracy NUMERIC NOT NULL,
+  time_taken NUMERIC NOT NULL,
+  challenge_text TEXT NOT NULL,
+  completed_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS challenges (
+  id SERIAL PRIMARY KEY,
+  text TEXT NOT NULL,
+  difficulty VARCHAR(20) NOT NULL DEFAULT 'medium',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

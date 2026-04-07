@@ -1,0 +1,27 @@
+{
+  "name": "typing-game",
+  "version": "1.0.0",
+  "description": "A real-time typing game with character-by-character matching, WPM tracking, and persistent results",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node src/server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "node src/server/index.js",
+    "migrate": "node migrations/run.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "concurrently": "^9.0.1",
+    "vite": "^5.4.9"
+  }
+}
